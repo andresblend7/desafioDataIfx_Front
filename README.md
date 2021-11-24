@@ -17,7 +17,7 @@
         😞 Beauty Request View
         </li>
     </ol>
-![alt text](https://ibb.co/cTb8Xyv)
+[![screenshot.png](https://i.postimg.cc/jjv93hzV/screenshot.png)](https://postimg.cc/bGD3skCL)
 
 
 
