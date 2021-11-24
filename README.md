@@ -1,3 +1,23 @@
+# Dev Notes
+ <h2>Created by AndresMendoza</h2>
+    <b>
+      To Do:
+    </b>
+   <ol>
+    <li>
+      😞 Table Pagination
+    </li>
+    <li>
+      😞 Table Sorting
+    </li>
+    <li>
+      😞 Unit Test
+      </li>
+      <li>
+        😞 Beauty Request View
+        </li>
+    </ol>
+
 # DesafioDataIfx
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
