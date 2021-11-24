@@ -1,0 +1,72 @@
+ <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col" class="text-center">Image</th>
+          <th scope="col">Name</th>
+          <th scope="col">Patronus</th>
+          <th scope="col">Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let char of characters$ | async; index as idx">
+          <td class="text-center">
+            <img [src]="char.image" class="rounded-circle" />
+          </td>
+          <td>
+            <ngb-highlight
+              [result]="char.name"
+            ></ngb-highlight>
+          </td>
+          <td>
+            <ngb-highlight
+              [result]="char.patronus"
+            ></ngb-highlight>
+          </td>
+          <td>
+            <ngb-highlight
+              [result]="char.age | number"
+            ></ngb-highlight>
+          </td>
+          <!-- <td>{{char.patronus}}</td>
+        <td>{{char.age}}</td> -->
+        </tr>
+      </tbody>
+    </table>
+<!--
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col" class="text-center">Image</th>
+          <th scope="col">Name</th>
+          <th scope="col">Patronus</th>
+          <th scope="col">Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let char of characters$ | async; index as idx">
+          <td class="text-center">
+            <img [src]="char.image" class="rounded-circle" />
+          </td>
+          <td>
+            <ngb-highlight
+              [result]="char.name"
+              [term]="filter.value"
+            ></ngb-highlight>
+          </td>
+          <td>
+            <ngb-highlight
+              [result]="char.patronus"
+              [term]="filter.value"
+            ></ngb-highlight>
+          </td>
+          <td>
+            <ngb-highlight
+              [result]="char.age | number"
+              [term]="filter.value"
+            ></ngb-highlight>
+          </td>
+          <td>{{char.patronus}}</td>
+        <td>{{char.age}}</td>
+        </tr>
+      </tbody>
+    </table> -->

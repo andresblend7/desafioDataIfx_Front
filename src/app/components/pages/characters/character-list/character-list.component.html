@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col text-center">
+    <h1 class="page-title">{{tittle | uppercase}}</h1>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-xl-10 col-md-12 offset-xl-1 col-sm-12">
+    <form>
+    <div class="row">
+
+      <div class="col-8">
+        <div class="form-group w-100 m-auto pb-5">
+          <input
+            class="form-control ml-2"
+            type="text"
+            placeholder="Búsqueda por nombre / patronus"
+            id="filter"
+            [formControl]="filter"
+          />
+        </div>
+      </div>
+
+      <div class="col-4" *ngIf="isCharacter">
+        <select name="house" id="" [(ngModel)]="house" (change)="GetCharacters()" class="form-control">
+          <option value="Gryffindor">Casa Gryffindor</option>
+          <option value="Hufflepuff">Casa Hufflepuff</option>
+          <option value="Slytherin">Casa Slytherin</option>
+          <option value="Ravenclaw">Casa Ravenclaw</option>
+        </select>
+      </div>
+    </div>
+    </form>
+
+    <app-table [characters$]="characters$" [characters]="characters"></app-table>
+
+  </div>
+</div>

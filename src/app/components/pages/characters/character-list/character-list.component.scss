@@ -1,0 +1,11 @@
+.card{
+  width: 100% !important;
+}
+
+input, select{
+  font-size: 18px;
+  &::placeholder {
+    color: #d1ba5260;
+    font-size: 1.5em;
+  }
+}

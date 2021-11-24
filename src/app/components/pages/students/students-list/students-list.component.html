@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col text-center">
+    <h1 class="page-title">LISTADO DE ESTUDIANTES</h1>
+  </div>
+</div>
+<div class="row mt-3-mb-3">
+  <div class="col-xl-10 col-md-12 offset-xl-1 col-sm-12 text-right">
+    <button class="btn btn-outline-primary" (click)="open(content)">
+      Hacer una solicitud
+    </button>
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col-xl-10 col-md-12 offset-xl-1 col-sm-12">
+    <app-table [characters$]="characters$" [characters]="characters"></app-table>
+  </div>
+</div>
+
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Hacer una solicitud</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group"  [formGroup]="solicitudFrm">
+        <label for="">Casa: <span class="text-danger">*</span></label>
+        <select name="" id="" class="form-control" formControlName="house" [class]="isValidField('house')">
+          <option value="">Seleccione una casa</option>
+          <option value="Gryffindor">Gryffindor</option>
+          <option value="Hufflepuff">Hufflepuff</option>
+          <option value="Slytherin">Slytherin</option>
+          <option value="Ravenclaw">Ravenclaw</option>
+        </select>
+        <label for="">Nombres: <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" formControlName="names" [class]="isValidField('names')">
+        <label for="">Apellidos: <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" formControlName="lastNames" [class]="isValidField('lastNames')">
+        <label for="">Edad: <span class="text-danger">*</span></label>
+        <input type="number" class="form-control" formControlName="age" [class]="isValidField('age')">
+        <label for="">Patronus:</label>
+        <input type="text" class="form-control" formControlName="patronus" [class]="isValidField('patronus')">
+      </div>
+      <div class="alert alert-danger" *ngIf="!validateForm">
+        <p>Formulario no válido, por favor verifique sus respuestas.</p>
+      </div>
+      <div class="alert alert-success" *ngIf="successRequest">
+        <p>Solcitud realizada exitosamente.</p>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" *ngIf="!successRequest" class="btn btn-outline-primary" (click)="makeRequest()">Realizar solicitud</button>
+    <button type="button"  class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancelar</button>
+  </div>
+</ng-template>
